@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "b4ad9668-037b-41bb-b736-f65ec6fd1811",
+		"name": "Accepted_Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10427506"
+	},
+	"item": [
+		{
+			"name": "Match",
+			"item": [
+				{
+					"name": "Create new Match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"desc\",\r\n  \"matchDate\": \"2022-10-10T13:21:57.415Z\",\r\n  \"teamA\": \"osfp\",\r\n  \"teamB\": \"Pao\",\r\n  \"sport\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44340/api/Match/Upsert",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44340",
+							"path": [
+								"api",
+								"Match",
+								"Upsert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Matches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"like\":\"Avraam22\",\r\n  \"offset\": 0,\r\n  \"limit\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44340/api/Match/Query",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44340",
+							"path": [
+								"api",
+								"Match",
+								"Query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Match",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44340/api/Match/Delete/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44340",
+							"path": [
+								"api",
+								"Match",
+								"Delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Match",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44340/api/Match/GetSingle/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44340",
+							"path": [
+								"api",
+								"Match",
+								"GetSingle",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MatchOdds",
+			"item": [
+				{
+					"name": "Create new MatchOdds",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"matchId\": 1,\r\n  \"specifier\": \"1\",\r\n  \"odd\": 20.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44340/api/MatchOdds/Upsert",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44340",
+							"path": [
+								"api",
+								"MatchOdds",
+								"Upsert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Matches Odds",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"offset\": 0,\r\n  \"limit\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44340/api/MatchOdds/Query",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44340",
+							"path": [
+								"api",
+								"MatchOdds",
+								"Query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Match Odds",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44340/api/MatchOdds/Delete/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44340",
+							"path": [
+								"api",
+								"MatchOdds",
+								"Delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Match Odds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44340/api/MatchOdds/GetSingle/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44340",
+							"path": [
+								"api",
+								"MatchOdds",
+								"GetSingle",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
