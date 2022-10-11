@@ -76,6 +76,9 @@ namespace Accepted_Assignment.Repositories.Implementations
 					throw new ArgumentException("Match id property is required");
 
 				}
+
+				this.CheckExistingMatch(model.MatchId.Value);
+
 				MatchOdds dataToBeAdded = new MatchOdds()
 				{
 					Odd = model.Odd,
@@ -84,13 +87,6 @@ namespace Accepted_Assignment.Repositories.Implementations
 					CreatedAt = DateTime.Now,
 					UpdatedAt = DateTime.Now
 				};
-
-				bool matchFound = _context.Matches.Any(x => x.ID == model.MatchId);
-
-				if (!matchFound)
-				{
-					throw new ArgumentException("This match is not available");
-				}
 
 
 				_context.MatchOdds.Add(dataToBeAdded);
@@ -103,9 +99,13 @@ namespace Accepted_Assignment.Repositories.Implementations
 				MatchOdds datum = await _context.MatchOdds.FirstOrDefaultAsync(x => x.ID == model.ID);
 				if (datum != null)
 				{
+					if(model.MatchId != null)
+					{
+						this.CheckExistingMatch(model.MatchId.Value);
+					}
 					datum.Odd = model.Odd != null ? model.Odd : datum.Odd;
 					datum.Specifier = model.Specifier != null ? model.Specifier : datum.Specifier;
-					datum.MatchId = model.MatchId.Value;
+					datum.MatchId = model.MatchId != null ? model.MatchId.Value : datum.MatchId;
 					datum.UpdatedAt = DateTime.Now;
 
 					await _context.SaveChangesAsync();
@@ -117,5 +117,17 @@ namespace Accepted_Assignment.Repositories.Implementations
 			}
 			return model;
 		}
+
+		private void CheckExistingMatch(int matchId)
+		{
+			bool matchFound = _context.Matches.Any(x => x.ID == matchId);
+
+			if (!matchFound)
+			{
+				throw new ArgumentException("This match is not available");
+			}
+		}
 	}
+
+
 }
