@@ -10,7 +10,7 @@
 			"name": "Match",
 			"item": [
 				{
-					"name": "Create new Match",
+					"name": "Upsert Match",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -119,7 +119,7 @@
 			"name": "MatchOdds",
 			"item": [
 				{
-					"name": "Create new MatchOdds",
+					"name": "Upsert MatchOdds",
 					"request": {
 						"method": "POST",
 						"header": [],

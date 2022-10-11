@@ -28,9 +28,9 @@ namespace Accepted_Assignment.Controllers
 
 
 		/// <summary>
-		/// Creates a new Match.
+		/// Upsert Match.
 		/// </summary>
-		/// <returns>A newly created Match</returns>
+		/// <returns> Match</returns>
 		/// <remarks>
 		/// Sample request:
 		///
@@ -158,9 +158,9 @@ namespace Accepted_Assignment.Controllers
 		}
 
 		/// <summary>
-		/// Creates a new Match odds.
+		/// Upsert Match odds.
 		/// </summary>
-		/// <returns>A newly created Match odds</returns>
+		/// <returns>Match odds</returns>
 		/// <remarks>
 		/// Sample request:
 		///
